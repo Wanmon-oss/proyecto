@@ -3,19 +3,17 @@ site_name: Proyecto de Programación de Modelos Probabilísticos
 nav:
   - Inicio: index.md
   - Objetivos: objetivos.md
-  - Recopilación: recopilacion.md
-  - Almacenamiento: almacenamiento.md
-  - Exploración: exploracion.md
-  - Modelado: modelado.md
-  - Instrucciones: instrucciones.md
-  - Requisitos: requisitos.md
-  - Atributos: atributos.md
-
+  - Problema: problema.md 
+  - Ejecución del proyecto: ejecuccion.md
+  - Datos: Datos.md 
+  - Análisis resultados: Análisis resultados.md
+  - Conclusiones: Conclusiones.md 
+  - Anexos: anexos.md
 theme: 
   name: material
   language: es
   palette:
-    primary: red
+    primary: green
   logo: images/plot.png
   favicon: images/plot.png
   features:

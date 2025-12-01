@@ -9,7 +9,7 @@ class Base(DeclarativeBase):
     pass
 
 
-# Cargar las variables ambiente desde el archivo .env
+# Load environment variables from .env file
 load_dotenv()
 
 # Datos de configuración
@@ -21,13 +21,12 @@ class TestData(Base):
     """Definición de la tabla de ejemplo."""
 
     __tablename__ = "test_data"
-
-    id = Column(Integer, primary_key=True)
-    topic = Column(String)
-    timestamp = Column(DateTime)
-    variable_1 = Column(Integer)
-    variable_2 = Column(Float)
-    variable_3 = Column(String)
+    id = Column(Integer, primary_key=True) # identificador único
+    topic = Column(String)  #Tópico MQTT del que proviene el dato
+    timestamp = Column(DateTime) # hora en la que se recibió el dato   
+    student_id = Column(String)  # identificador del estudiante
+    first_name = Column(String)  # nombre del estudiante
+    last_name = Column(String)  # apellido del estudiante
 
 
 # Crear la conexión a la base de datos SQLite3 o PostgreSQL

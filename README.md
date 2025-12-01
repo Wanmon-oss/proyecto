@@ -1,5 +1,7 @@
 # Proyecto de programación de IE0405 - Modelos Probabilísticos de Señales y Sistemas
 
+### Estudiante: Wanda Monge Guido C24945"
+
 Los archivos incluidos en el repositorio original son:
 
 - `mkdocs.yml`: configuración de la documentación en Material for MkDocs. Para más detalles, ver su [documentación](https://squidfunk.github.io/mkdocs-material/).
@@ -45,13 +47,6 @@ para actualizar los permisos. Para cambiar de usuario `root` a `<username>` y em
 ```bash
 su <username>
 ```
-
-También es recomendado utilizar la [Terminal Windows](https://learn.microsoft.com/es-es/windows/terminal/install), que ofrece mejores herramientas para manejar múltiples terminales, tanto en Windows como en el WSL. También [Warp](https://www.warp.dev/) es una terminal recomendada.
-
-Nótese que WSL no es ni una máquina virtual ni una configuración de arranque dual (*dual boot*), sino que opera nativamente en Windows. Además, los archivos de Windows están disponibles desde Linux y viceversa.
-
-> [!NOTE]
-> Una vez instalado WSL, las instrucciones a partir de ahora aplican para una terminal Unix con `bash` o `zsh` (igual para Linux o macOS), indicado con el símbolo del *prompt* `$`.
 
 ### Clonar el repositorio
 
@@ -117,27 +112,4 @@ Para salir de la visualización, utilizar `Ctrl + C`, o, de otro modo, dejar el 
 uv run src/client.py
 ```
 
-## Algunas recomendaciones para Markdown
 
-La documentación está en Markdown, que tiene muchas posibilidades.
-
-### Ejemplo de ecuaciones matemáticas
-
-Sea $X$ (ejemplo de una variable matemática en línea) una variable aleatoria con:
-
-$$
-x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$
-
-donde $a \neq 0$ (ejemplo de ecuación en línea).
-
-### Ejemplo de tablas
-
-Herramienta recomendada: [TableConvert](https://tableconvert.com/).
-
-| Producto | Precio |
-|----------|--------|
-| Piña     | 1500   |
-| Melón    | 1250   |
-| Manzana  | 2100   |
-| Papaya   | 1200   |
