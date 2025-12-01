@@ -2,13 +2,42 @@
 
 ### Estudiante: Wanda Monge Guido C24945"
 
-Los archivos incluidos en el repositorio original son:
 
-- `mkdocs.yml`: configuración de la documentación en Material for MkDocs. Para más detalles, ver su [documentación](https://squidfunk.github.io/mkdocs-material/).
-- `pyproject.toml`: especificación del proyecto y de las dependencias de paquetes de Python.
-- `LICENSE`: licencia Creative Commons [Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed.es) de derechos de autor.
-- `.gitignore`: archivos y directorios que Git ignora para hacer control de versiones y para subir a un repositorio remoto. Típicamente son archivos con datos privados o específicos del sistema operativo local, que no deben reproducirse en el repositorio de otros desarrolladores.
-- `uv.lock`: parámetros del entorno de Python que será ejecutado con `uv` (más información en la [documentación de uv](https://docs.astral.sh/uv/)).
+Componentes del Proyecto
+*** Suscriptor MQTT (subscriber.py)***
+
+* Se conecta al broker MQTT usando credenciales definidas en .env.
+
+* Recibe mensajes con formato JSON.
+
+* Inserta los datos en la base de datos test.db.
+
+* Incluye manejo de errores, reconexión automática y logs.
+
+***2. Base de Datos SQLite (test.db)***
+
+Guarda el ID, nombre, apellido, timestamp y tópico de cada mensaje recibido.
+
+Es consultada posteriormente por el módulo de análisis.
+
+***3. Analizador Estadístico (analisis.py)***
+
+Este script:
+
+* Extrae la tabla desde test.db.
+
+* Convierte los timestamps.
+
+* Calcula el delay entre mensajes consecutivos.
+
+* Limpia datos inválidos.
+
+* Genera dos figuras
+
+
+* Compara momentos estadísticos reales vs modelo ajustado.
+
+
 
 ## Documentación e instrucciones del proyecto
 
@@ -58,12 +87,6 @@ Para comenzar, es necesario "clonar" el repositorio con sus archivos localmente.
 - Moverse al directorio del proyecto con `$ cd proyecto/`.
 - Si no fue hecho antes, configurar las credenciales de Git en el sistema local, con `$ git config --global user.name "Nombre Apellido"` y `$ git config --global user.email "your-email@example.com"`, de modo que quede vinculado con la cuenta de GitHub.
 
-### Instalar `uv`
-
-Seguir las [instrucciones de instalación](https://docs.astral.sh/uv/getting-started/installation/) de `uv` según el sistema operativo. Luego, seguir los primeros pasos de configuración, incluyendo la instalación de una versión de Python con `uv python install`. 
-
-> [!IMPORTANT]
-> La versión de Python instalada con `uv` no estará disponible localmente. En cambio, ahora es necesario ejecutar comandos como `uv run python` para abrir la línea de comandos interactiva o `uv run python [script.py]` para ejecutar un archivo.
 
 ### Crear un ambiente virtual de Python con `uv`
 
@@ -89,19 +112,6 @@ y para eliminarlo:
 uv remove nombre-del-paquete
 ```
 
-### Para editar y visualizar la documentación
-
-En una terminal, en el directorio raíz del repositorio, utilizar:
-
-```bash
-uv run mkdocs serve
-```
-
-Abrir en un navegador web la página del "servidor local" en el puerto 8000, en [http://127.0.0.1:8000/](http://127.0.0.1:8000/) o en [http://localhost:8000/](http://localhost:8000/).
-
-Cada cambio en los documentos de la carpeta `docs/` o en el archivo `mkdocs.yml` genera un refrescamiento de la página.
-
-Para salir de la visualización, utilizar `Ctrl + C`, o, de otro modo, dejar el proceso corriendo mientras edita la documentación.
 
 ### Para ejecutar el proyecto
 
